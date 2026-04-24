@@ -17,6 +17,9 @@ This repository uses a multi-branch strategy to organize its components:
 - **Performance Analytics**: Detailed insights into learning progress and coding habits.
 - **Resource Aggregator**: Curated list of best resources for your specific path.
 
+## AI & System Architecture
+![HLD](https://github.com/Haniff-Toha/kaix-ai-tech-talent-dev/blob/main/deck/HLD.png)
+
 ## Local Development
 
 To explore specific parts of the project, switch to the respective branch:
