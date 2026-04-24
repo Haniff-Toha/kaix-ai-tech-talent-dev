@@ -1,0 +1,9 @@
+other_documents/
+research/
+fe/
+be/
+implementation_docs/
+
+# OS/System files
+.DS_Store
+Thumbs.db
