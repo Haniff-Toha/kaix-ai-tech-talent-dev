@@ -1,0 +1,67 @@
+[project]
+name = "kaix-backend"
+version = "0.1.0"
+description = "Kaix — Personal Talent Development Roadmap API"
+requires-python = ">=3.11"
+dependencies = [
+    # Web framework
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "python-multipart>=0.0.18",
+
+    # Database
+    "sqlalchemy[asyncio]>=2.0.36",
+    "asyncpg>=0.30.0",
+    "alembic>=1.14.0",
+    "pgvector>=0.3.6",
+
+    # AI / LLM
+    "langchain-core>=0.3.30",
+    "langchain-openai>=0.3.6",
+    "langchain-google-genai>=2.1.0",
+    "langgraph>=0.2.60",
+    "google-genai>=1.0.0",
+
+    # Auth
+    "python-jose[cryptography]>=3.3.0",
+    "httpx>=0.28.0",
+
+    # Config
+    "pydantic-settings>=2.7.0",
+
+    # Scraping
+    "beautifulsoup4>=4.12.0",
+    "lxml>=5.0.0",
+
+    # Utilities
+    "numpy>=1.26.0",
+    "scikit-learn>=1.6.0",
+
+    # Scheduler & Notifications
+    "apscheduler>=3.10",
+    "resend",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app", "scripts"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
