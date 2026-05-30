@@ -85,11 +85,37 @@ export default function LandingPage() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-8 text-center pb-8 px-6">
+      <div className="relative z-8 text-center pb-24 px-6">
         <p className="font-display font-bold text-xs text-text-muted uppercase tracking-wider">
           Still on Development Gaisss! 🚀
         </p>
       </div>
+
+      {/* Floating Download APK Button */}
+      <motion.a
+        href="https://drive.google.com/file/d/1eo_Eo0494o3rkwaiSK4zp0uIaf40Rgls/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ 
+          opacity: 1, 
+          scale: 1,
+          y: [0, -8, 0] // Continuous floating up/down motion
+        }}
+        transition={{ 
+          opacity: { delay: 0.8, duration: 0.4 },
+          scale: { delay: 0.8, type: 'spring', stiffness: 200 },
+          y: {
+            repeat: Infinity,
+            duration: 2.4,
+            ease: "easeInOut"
+          }
+        }}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 border-4 border-dark rounded-2xl bg-brand-pink font-display font-black text-sm text-dark shadow-[4px_4px_0_#09090B] hover:bg-[#ff9cbd] active:shadow-[2px_2px_0_#09090B] active:translate-y-[2px] transition-all cursor-pointer"
+      >
+        <span>📲</span>
+        <span>Download the App!</span>
+      </motion.a>
     </div>
   )
 }
