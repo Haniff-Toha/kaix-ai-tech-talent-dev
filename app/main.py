@@ -58,8 +58,8 @@ app = FastAPI(
     description="Personal Talent Development Roadmap — AI Career Companion",
     version="0.1.0",
     lifespan=lifespan,
-    docs_url="/docs",
-    redoc_url="/redoc",
+    docs_url="/docs" if settings.is_development else None,
+    redoc_url="/redoc" if settings.is_development else None,
 )
 
 # CORS
