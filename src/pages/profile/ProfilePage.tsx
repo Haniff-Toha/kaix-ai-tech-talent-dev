@@ -123,7 +123,9 @@ export default function ProfilePage() {
           <button className="w-full px-5 py-4 text-left font-display font-bold text-base text-dark hover:bg-border-light transition-colors border-b-2 border-dark flex items-center justify-between gap-4 group">
             <div className="flex items-center gap-4 min-w-0">
               <span className="w-8 h-8 rounded-full border-2 border-dark bg-white flex items-center justify-center text-sm shadow-[1px_1px_0_#09090B] group-hover:bg-brand-blue group-hover:text-white transition-colors shrink-0">🌐</span> 
-              <span className="truncate">Bahasa: Indonesia</span>
+              <span className="flex items-center gap-1.5 truncate">
+                Bahasa: <img src="https://flagcdn.com/h20/id.png" alt="Indonesia" className="h-3.5 object-contain border border-dark rounded-sm shadow-[1px_1px_0_#09090B]" />
+              </span>
             </div>
             <span className="font-display font-bold text-[10px] uppercase text-brand-pink bg-brand-pink/10 border-2 border-brand-pink px-2.5 py-1 rounded-md shadow-[1px_1px_0px_#09090B] shrink-0">
               Lainnya Segera Hadir

@@ -69,7 +69,7 @@ export default function LoginPage() {
 
           {/* Form card */}
           <div className="neo-card p-6 border-4">
-            <h2 className="font-display text-xl text-dark text-center mb-6 font-bold">Selamat kembali 👋</h2>
+            <h2 className="font-display text-xl text-dark text-center mb-6 font-bold">Haloo!! 👋</h2>
 
             <form onSubmit={handleLogin} className="flex flex-col gap-4">
               {/* Email */}

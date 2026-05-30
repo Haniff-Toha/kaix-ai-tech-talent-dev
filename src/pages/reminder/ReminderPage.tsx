@@ -107,6 +107,21 @@ export default function ReminderPage() {
     } catch (err) { console.error(err) }
   }
 
+  const handleToggleActive = async (r: any) => {
+    try {
+      // Optimistically update the local state for a snappy UI response
+      setReminders((prev) =>
+        prev.map((item) => (item.id === r.id ? { ...item, is_active: !item.is_active } : item))
+      )
+      // Call partial update API
+      await reminderService.update(r.id, { is_active: !r.is_active })
+    } catch (err) {
+      console.error(err)
+      // Revert to server state if the update fails
+      loadReminders()
+    }
+  }
+
   const handlePreview = async (id: string) => {
     setPreviewId(id)
     setPreviewLoading(true)
@@ -367,8 +382,11 @@ export default function ReminderPage() {
                           {channelLabel(r.channel)}
                         </span>
                       </div>
-                      <div className={`relative w-14 h-8 rounded-full cursor-pointer transition-colors border-2 border-dark shadow-[inset_1px_1px_0_rgba(0,0,0,0.1)] shrink-0
-                        ${r.is_active ? 'bg-brand-green' : 'bg-border-light'}`}>
+                      <div
+                        onClick={() => handleToggleActive(r)}
+                        className={`relative w-14 h-8 rounded-full cursor-pointer transition-colors border-2 border-dark shadow-[inset_1px_1px_0_rgba(0,0,0,0.1)] shrink-0
+                          ${r.is_active ? 'bg-brand-green' : 'bg-border-light'}`}
+                      >
                         <div className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white border-2 border-dark shadow-[1px_1px_0_#09090B] transition-transform
                           ${r.is_active ? 'translate-x-6' : 'translate-x-0'}`} />
                       </div>

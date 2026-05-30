@@ -9,6 +9,7 @@ import AppShell from '@/components/layout/AppShell'
 import LoginPage from '@/pages/auth/LoginPage'
 import SignupPage from '@/pages/auth/SignupPage'
 import LandingPage from '@/pages/LandingPage'
+import AppLandingPage from '@/pages/AppLandingPage'
 import OnboardingPage from '@/pages/onboarding/OnboardingPage'
 import OverviewPage from '@/pages/overview/OverviewPage'
 import CoursePage from '@/pages/course/CoursePage'
@@ -76,6 +77,7 @@ export default function App() {
           {/* Public routes — redirect to /overview if already logged in */}
           <Route element={<PublicOnlyRoute />}>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/applanding" element={<AppLandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
           </Route>
