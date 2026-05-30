@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     app_port: int = 8000
 
     # ─── Database ───
-    database_url: str
+    database_url: str = ""
 
     # ─── Supabase Auth ───
     supabase_url: str = ""
