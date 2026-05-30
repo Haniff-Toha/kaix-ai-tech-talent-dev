@@ -35,4 +35,4 @@ git checkout backend
 Refer to the `README.md` within each branch for specific setup instructions.
 
 ---
-Created with ❤️ by the Kaix  for RubyThalib Final Project.
+Created with ❤️ by the Kaix  for RubyThalib Final Project and #JuaraVibeCoding.
