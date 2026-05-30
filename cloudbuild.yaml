@@ -1,0 +1,30 @@
+steps:
+  # 1. Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/kaix-repo/kaix-be:$COMMIT_SHA'
+      - '.'
+
+  # 2. Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/kaix-repo/kaix-be:$COMMIT_SHA'
+
+  # 3. Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'kaix-be'
+      - '--image'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/kaix-repo/kaix-be:$COMMIT_SHA'
+      - '--region'
+      - 'asia-southeast2'
+      - '--allow-unauthenticated'
+
+images:
+  - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/kaix-repo/kaix-be:$COMMIT_SHA'
