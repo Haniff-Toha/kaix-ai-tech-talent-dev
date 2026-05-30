@@ -7,8 +7,8 @@ Kaix is a next-generation platform designed to empower tech talent through AI-dr
 This repository uses a multi-branch strategy to organize its components:
 
 - **`main` (this branch)**: Contains project documentation, design decks, and overall configuration.
-- **`fe` branch**: Contains the frontend application (React, TypeScript, Vite, Tailwind CSS).
-- **`be` branch**: Contains the backend services (Python, FastAPI/PostgreSQL).
+- **`frontend` branch**: Contains the frontend application (React, TypeScript, Vite, Tailwind CSS).
+- **`backend` branch**: Contains the backend services (Python, FastAPI/PostgreSQL).
 
 ## Key Features
 
@@ -26,10 +26,10 @@ To explore specific parts of the project, switch to the respective branch:
 
 ```bash
 # To work on frontend
-git checkout fe
+git checkout frontend
 
 # To work on backend
-git checkout be
+git checkout backend
 ```
 
 Refer to the `README.md` within each branch for specific setup instructions.
